@@ -28,8 +28,8 @@ const Body = () => {
     
         console.log(json)
         // setListOfRestaurant(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)
-        setListOfRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-        setFilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setListOfRestaurant(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setFilteredRestaurant(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }; 
 
     return listOfRestaurants.length === 0  ? (
