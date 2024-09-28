@@ -11,6 +11,9 @@ const RestaurantCard = (props) => {
         avgRatingString
 
     } = resData?.info;
+
+    
+
     return (
         <div className="m-2 p-2 w-[200px] bg-gray-100 rounded-lg hover:bg-green-200 ">
             <img className="rounded-lg" alt="res-logo" src={CDN_URL+cloudinaryImageId}></img>
@@ -21,6 +24,15 @@ const RestaurantCard = (props) => {
         </div>
     )
 }
-
+export const withPromotedLabel = (RestaurantCard) => {
+    return (props) => {
+        return (
+            <div>
+                <label className="absolute bg-red-500 text-white m-1 p-1 rounded-lg">Promoted</label>
+                <RestaurantCard {...props}/>
+            </div>
+        )
+    }
+}
 
 export default RestaurantCard;

@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard,{withPromotedLabel} from "./RestaurantCard";
 import resList from "../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
@@ -9,6 +9,7 @@ const Body = () => {
     const [listOfRestaurants,setListOfRestaurant] = useState([]);
     const [filteredRestaurants,setFilteredRestaurant] = useState([]);
     const [searchText,setSearchText] = useState("");
+    const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
     const handleSearch = () => {
         const filteredRestaurants = listOfRestaurants.filter((res) =>
@@ -28,10 +29,10 @@ const Body = () => {
 
         const json = await data.json();
     
-        console.log(json)
+        // console.log(json)
         // setListOfRestaurant(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)
-        setListOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-        setFilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setListOfRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setFilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }; 
 
     const onlineStatus = useOnlineStatus();
@@ -74,7 +75,10 @@ const Body = () => {
                             key = {restaurant.info.id} 
                             to = {"/restaurants/"+restaurant.info.id} 
                         >
-                            <RestaurantCard  resData={restaurant} />
+                            { console.log(restaurant.info.isOpen)}
+                            { restaurant.info.isOpen ? (<RestaurantCardPromoted resData={restaurant} />) : 
+                            (<RestaurantCard  resData={restaurant} />) 
+                        }
                         </Link>
                     ))
                 }
