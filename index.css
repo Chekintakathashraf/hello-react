@@ -1,4 +1,4 @@
-.header{
+/* .header{
     display: flex;
     color: blue;
     justify-content: space-between;
@@ -82,4 +82,19 @@
 .user-card{
     padding: 10px;
     border: 1px solid black;
-}
+} */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+
+
+
+
+
+
