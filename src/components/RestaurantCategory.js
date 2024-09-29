@@ -14,9 +14,11 @@ const RestaurantCategory = ( {data, showItems, newSetShowIndex}) => {
       <div className='flex justify-between font-bold cursor-pointer' onClick={handleClick}>
 
         <span> { data.title } ({data.itemCards.length})</span>
-        <span> ^ </span>
+        <span>{showItems ? 'v' : '^'}</span> {/* Change arrow direction based on showItems */}
+               
       </div>
       {showItems && <ItemList items = {data.itemCards}/>}
+      {/* if showItems is true then it will execute <ItemList items = {data.itemCards}/> ,or else if showItems is false it will not execute <ItemList items = {data.itemCards}/>*/}
       
       </div>
     </div>
