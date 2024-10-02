@@ -14,7 +14,7 @@ const RestaurantCategory = ( {data, showItems, newSetShowIndex}) => {
       <div className='flex justify-between font-bold cursor-pointer' onClick={handleClick}>
 
         <span> { data.title } ({data.itemCards.length})</span>
-        <span>{showItems ? 'v' : '^'}</span> {/* Change arrow direction based on showItems */}
+        <span>{showItems ? '^':'v'  }</span> {/* Change arrow direction based on showItems */}
                
       </div>
       {showItems && <ItemList items = {data.itemCards}/>}

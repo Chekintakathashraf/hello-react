@@ -51,6 +51,7 @@ const RestaurantMenu = () => {
                      data = {category?.card?.card}
                       showItems = {index === showIndex ? true : false}
                     //   newSetShowIndex = { () => setShowIndex(index)}
+                    // if we convrt showIndex to null it will close, to a value(index) i will open that particular index
                     newSetShowIndex={() => setShowIndex(index === showIndex ? null : index)}
 
                 /> 
